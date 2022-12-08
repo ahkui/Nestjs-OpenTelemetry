@@ -52,6 +52,7 @@
     "@opentelemetry/resource-detector-gcp": "^0.27.4",
     "@opentelemetry/resource-detector-instana": "^0.4.0",
     "@opentelemetry/sdk-node": "^0.34.0",
+    "response-time": "^2.3.2",
     "rimraf": "^3.0.2",
     "rxjs": "^7.5.7"
   },
@@ -69,6 +70,7 @@
     "@types/express": "^4.17.14",
     "@types/jest": "^29.1.2",
     "@types/node": "^18.8.3",
+    "@types/response-time": "^2.3.5",
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.39.0",

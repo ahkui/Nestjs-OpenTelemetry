@@ -10,5 +10,6 @@ var Constants;
     Constants["METRIC_METADATA"] = "OPEN_TELEMETRY_METRIC_METADATA";
     Constants["TRACE_METADATA_ACTIVE"] = "OPEN_TELEMETRY_TRACE_METADATA_ACTIVE";
     Constants["METRIC_METADATA_ACTIVE"] = "OPEN_TELEMETRY_METRIC_METADATA_ACTIVE";
+    Constants["OTEL_METRIC_NAME"] = "OTEL_METRIC_NAME";
 })(Constants = exports.Constants || (exports.Constants = {}));
 //# sourceMappingURL=Constants.js.map

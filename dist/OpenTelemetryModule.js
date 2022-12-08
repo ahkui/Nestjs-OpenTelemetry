@@ -10,6 +10,7 @@ const DecoratorInjector_1 = require("./Trace/Injectors/DecoratorInjector");
 const core_1 = require("@nestjs/core");
 const event_emitter_1 = require("@nestjs/event-emitter");
 const sdk_trace_base_1 = require("@opentelemetry/sdk-trace-base");
+const metrics_1 = require("./metrics");
 class OpenTelemetryModule {
     static async forRoot(configuration = {}) {
         configuration = { ...OpenTelemetryModuleConfig_1.OpenTelemetryModuleDefaultConfig, ...configuration };
@@ -21,6 +22,8 @@ class OpenTelemetryModule {
             providers: [
                 ...injectors,
                 TraceService_1.TraceService,
+                metrics_1.MetricService,
+                metrics_1.NodeMetricService,
                 OpenTelemetryService_1.OpenTelemetryService,
                 DecoratorInjector_1.DecoratorInjector,
                 this.buildProvider(configuration),
@@ -31,7 +34,7 @@ class OpenTelemetryModule {
                     useValue: configuration,
                 },
             ],
-            exports: [TraceService_1.TraceService, sdk_trace_base_1.Tracer],
+            exports: [TraceService_1.TraceService, metrics_1.MetricService, metrics_1.NodeMetricService, sdk_trace_base_1.Tracer],
         };
     }
     static buildProvider(configuration) {
@@ -67,6 +70,8 @@ class OpenTelemetryModule {
             imports: [...configuration?.imports, event_emitter_1.EventEmitterModule.forRoot()],
             providers: [
                 TraceService_1.TraceService,
+                metrics_1.MetricService,
+                metrics_1.NodeMetricService,
                 OpenTelemetryService_1.OpenTelemetryService,
                 this.buildAsyncProvider(),
                 this.buildAsyncInjectors(),
@@ -77,7 +82,7 @@ class OpenTelemetryModule {
                     inject: configuration.inject,
                 },
             ],
-            exports: [TraceService_1.TraceService, sdk_trace_base_1.Tracer],
+            exports: [TraceService_1.TraceService, metrics_1.MetricService, metrics_1.NodeMetricService, sdk_trace_base_1.Tracer],
         };
     }
     static buildAsyncProvider() {

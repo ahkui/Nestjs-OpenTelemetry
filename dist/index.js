@@ -27,4 +27,6 @@ __exportStar(require("./Trace/Injectors/LoggerInjector"), exports);
 __exportStar(require("./Trace/Injectors/PipeInjector"), exports);
 __exportStar(require("./Trace/Injectors/ScheduleInjector"), exports);
 __exportStar(require("./Trace/NoopTraceExporter"), exports);
+__exportStar(require("./metrics"), exports);
+__exportStar(require("./middleware"), exports);
 //# sourceMappingURL=index.js.map

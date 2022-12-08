@@ -13,3 +13,7 @@ export * from './Trace/Injectors/LoggerInjector';
 export * from './Trace/Injectors/PipeInjector';
 export * from './Trace/Injectors/ScheduleInjector';
 export * from './Trace/NoopTraceExporter';
+
+// Metric
+export * from './metrics';
+export * from './middleware';
